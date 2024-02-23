@@ -20,6 +20,7 @@ import { NavbarOthers } from './components/header/others';
 import { NavbarRestaurant } from './components/header/restaurant';
 import { NavbarHome } from './components/header';
 import { Footer } from './components/footer';
+import { MemberPage } from './screens/MemberPage';
 
 
 
@@ -63,6 +64,9 @@ function App() {
         </Route>
         <Route path="/Community">
           <CommunityPage />
+        </Route>
+        <Route path="/member">
+          <MemberPage />
         </Route>
         <Route path="/Contact Us">
           <ContactusPage />

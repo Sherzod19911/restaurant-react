@@ -20,7 +20,7 @@ export function CustomersComments() {
                            alt="rasim"
                           />
 
-                 <img className="rasim" src="/restaurant/rasim3.jpg"
+                 <img className="rasim" src="/restaurant/rasim5.jpg"
                       loading="lazy"
                            alt="rasim"
                           />

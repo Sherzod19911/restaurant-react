@@ -44,7 +44,13 @@ import { NavLink } from 'react-router-dom';
                             Community 
                             </NavLink>
                     </Box>
-
+                    <Box className="hover-line" onClick={props.setPath}>
+                        <NavLink to="/member" 
+                        activeClassName="underLine">
+                            Member 
+                            </NavLink>
+                    </Box>
+                       
                     <Box className="hover-line" onClick={props.setPath}>
                         <NavLink to="/Shops" 
                         activeClassName="underLine">
