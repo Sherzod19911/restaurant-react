@@ -20,6 +20,7 @@ import { MySettings } from "./mySettings";
 import { MemberPosts } from "./MemberPosts";
 import { MemberFollowing } from "./MemberFollowing";
 import { MemberFollowers } from "./MemberFollowers";
+import TViewer from "../../components/tuiEditor/TViewer";
 
 
 export function VisitOtherPage(_props: any) {
@@ -86,7 +87,7 @@ export function VisitOtherPage(_props: any) {
                   <Box className={"menu_name"}
                    onClick={() => setValue("4")}>Tanlangan Maqola</Box>
                   <Box className={"menu_content"}>
-                  {/* <TViewer/> */}
+                  <TViewer/>
                   </Box>
                 </TabPanel>
               </Box>

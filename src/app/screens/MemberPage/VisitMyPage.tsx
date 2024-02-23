@@ -11,6 +11,7 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import SettingsIcon from "@mui/icons-material/Settings";
 
+
 import { MySettings } from "./mySettings";
 // OTHERS
 import Pagination from "@mui/material/Pagination";
@@ -20,6 +21,8 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { MemberFollowers } from "./MemberFollowers";
 import { MemberFollowing } from "./MemberFollowing";
 import { MemberPosts } from "./MemberPosts";
+
+import TViewer from "../../components/tuiEditor/TViewer";
 
 export function VisitMyPage(props: any) {
     //INITIALIZIATION
@@ -82,12 +85,16 @@ export function VisitMyPage(props: any) {
 
                   <TabPanel value={"4"}>
                     <Box className={"menu_name"}>Maqola Yozish</Box>
-                    <Box className={"write_content"}></Box>
+                    <Box className={"write_content"}>
+                    {/* <TuiEditor/> */}
+                    </Box>
                   </TabPanel>
 
                   <TabPanel value={"5"}>
                     <Box className={"menu_name"}>Tanlangan Maqola</Box>
-                    <Box className={"menu_content"}></Box>
+                    <Box className={"menu_content"}>
+                    <TViewer text={`<h3>Hello</h3>`}/>
+                    </Box>
                   </TabPanel>
 
                   <TabPanel value={"6"}>

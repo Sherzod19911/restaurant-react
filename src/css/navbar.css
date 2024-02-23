@@ -429,8 +429,49 @@ margin-top: 45px;
   width: 100%;
   height: 650px;
   display: flex;
-  background: url("/public/restaurant/header_restaurant2.png");
+  background: url("/public/restaurant/shop_page.jpg");
   background-size: cover;
-}
 
 
+ 
+
+  }
+
+  /* .shop_page {
+     width: 100%;
+    height: 650px;
+    display: flex;
+  
+    background-size: cover;
+    margin-top: 0px;
+    background-color: #222222;
+    border: 1px solid green; 
+
+  }  */
+
+  .shop_main_css {
+    margin-top: 50px;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 2200px;
+    background-color: #d4d2e8;
+    display: flex;
+   
+
+    flex-wrap: wrap;
+    border: 1px solid red;
+  }
+
+  .shop_left_side {
+    width: 300px;
+    height: 2200px;
+    border: 1px solid green;
+
+  }
+
+  .shop_right_side {
+    width: 970px;;
+    height: 2200px;
+    border: 1px solid rgb(77, 0, 128);
+    
+  }

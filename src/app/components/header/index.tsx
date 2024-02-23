@@ -45,9 +45,9 @@ import { NavLink } from 'react-router-dom';
                             </NavLink>
                     </Box>
                     <Box className="hover-line" onClick={props.setPath}>
-                        <NavLink to="/member" 
+                        <NavLink to="/Help" 
                         activeClassName="underLine">
-                            Member 
+                            Help
                             </NavLink>
                     </Box>
                        
