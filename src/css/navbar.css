@@ -450,16 +450,17 @@ margin-top: 45px;
   }  */
 
   .shop_main_css {
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 0px;
-    width: 100%;
-    height: 2200px;
-    background-color: #d4d2e8;
+    width: 1720px;
+    height: 1430px;
+    background-color: #dee2e6;
     display: flex;
+    margin-left: -200px;
    
 
     flex-wrap: wrap;
-    border: 1px solid red;
+    
   }
 
   .shop_left_side {
@@ -470,8 +471,93 @@ margin-top: 45px;
   }
 
   .shop_right_side {
-    width: 970px;;
-    height: 2200px;
-    border: 1px solid rgb(77, 0, 128);
+    width: 1100px;;
+    height: 1300px;
+    display: flex;
+    flex-direction: row;
+
+    flex-wrap: wrap;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-bottom: 5px;
     
   }
+  .shop_right_side.shop_photo {
+    width: 330px;
+    height: 197px;
+    border: 1px solid green;
+
+  }    
+  .shop_pizza {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   /* font-size:large;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-weight: 200;
+   font-style: normal; */
+   margin-left: 100px;
+
+  }
+
+
+  .shop_left_side .left_title {
+   
+   width: 300px;
+   height: 245px;
+   border: 1px solid black;
+
+  }
+
+  .shop_left_side .part2 {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   font-size: 20px;
+   color: #222222;
+    width: 240px;
+    height: 100px;
+    margin-left: 25px;
+    background-color: #fff;
+    border: 1px solid black;
+ 
+   }
+
+   .shop_left_side .part3 {
+    width: 240px;
+    height: 765px;
+    margin-top: 45px;
+    margin-left: 25px;
+     border: 1px solid black;
+     background-color: #fff;
+  
+    }
+
+    .shop_left_side .left_title .part1 {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+      font-size: 25px;
+      border: 1px solid black;
+   
+     }
+
+     .shop_left_side .part4 {
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+      font-size: 25px;
+    
+    
+      }
+
+      .shop_left_side .category {
+       font-size: 20px;
+      
+        }
+        .shop_left_side .part5 {
+          margin-top: 80px;
+          margin-left: 20px;
+          font-size: 20px;
+         
+           }
