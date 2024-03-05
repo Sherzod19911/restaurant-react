@@ -11,7 +11,7 @@ const card_list = Array.from(Array(4).keys());
 
 export function TodaysMenu() {
     return (
-        <div style={{ width:"1920px", height: "1101px", backgroundColor: "#dee2e6", border:"1px solid black", marginRight: "50px" }}>
+        <div style={{ width:"1920px", height: "1101px",  backgroundColor: "#F4FDE7", border:"1px solid black", marginRight: "50px" }}>
             <Container>
                 <Stack flexDirection="column" alignItems={"center"} sx={{mt:"45px"}}>
               <Box sx={{  width:"1170px", height: "560px", border:"1px solid green", marginRight: "170px", marginTop: "61px" }}>

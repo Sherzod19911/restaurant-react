@@ -6,16 +6,17 @@
 
     
     /* background-size: cover; */
-    background-color: #f8f9fa;
+    /*background-color: #f8f9fa;*/
+   
     border: 1px solid rgb(206, 38, 38);
-    /* //background-color: #f4fde7; */
+    background-color: #f4fde7; 
 
 
   }    
 
   .home_navbar .navbar_config {
    
-    width: 1244.68px;
+    width: 1244.68px;     
     height: 46px;
     margin-left:26px;       
     margin-top:55px;
@@ -58,7 +59,8 @@
       flex-direction: row;
       width: 1244px;
       height: 810px;
-      background-color:  #f8f9fa;;
+      /*background-color:  #f8f9fa;*/
+      background-color: "#F4FDE7";
    
       margin-top: 35px;
 
