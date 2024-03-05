@@ -23,9 +23,8 @@ export function SpecialMenu() {
                 flexDirection={"column"}
                 justifyContent={"center"}
                 alignItems={"center"}
-                style={{ width:"930px" }}
+                style={{ width:"1170px", height: "535px",marginRight: "375px"}}
                 sx={{mt:"85px"}}
-
                 >
                     <Box className="category_title">
                     Special Menu
@@ -34,7 +33,7 @@ export function SpecialMenu() {
                     <Stack 
                     flexDirection={"row"}
                         sx={{mt:"45px"}}
-                        marginRight={"5px"}
+                        marginRight={"250px"}
                         marginLeft={"80px"}
                         paddingLeft={"100px"}
                         >
@@ -43,8 +42,8 @@ export function SpecialMenu() {
 {/* The first restaurants vs codes */}
 
 <Card
-sx={{ minHeight: 415,   
-width: 300,     
+sx={{ minHeight: "420px",   
+width: 270,     
 marginRight: "25px", cursor: "pointer" 
 }}
 >    
@@ -149,8 +148,8 @@ alignItems={"center"}>
 </Card>
 
 <Card
-sx={{ minHeight: 415,   
-width: 300,     
+sx={{ minHeight: 420,   
+width: 270,     
 marginRight: "25px", cursor: "pointer" 
 }}
 >    
@@ -255,8 +254,8 @@ alignItems={"center"}>
 </Card>
 
 <Card
-sx={{ minHeight: 415,   
-width: 300,     
+sx={{ minHeight: 420,   
+width: 270,     
 marginRight: "25px", cursor: "pointer" 
 }}
 >    
@@ -361,8 +360,8 @@ alignItems={"center"}>
 </Card>
 
 <Card
-sx={{ minHeight: 415,   
-width: 300,     
+sx={{ minHeight: 420,   
+width: 270,     
 marginRight: "25px", cursor: "pointer" 
 }}
 >    

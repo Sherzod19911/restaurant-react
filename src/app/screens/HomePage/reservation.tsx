@@ -2,8 +2,10 @@ import React  from "react";
 import { Container } from "@mui/material"
 export function Reservation() {
     return (
-        <div className="static_frame">
-            <Container>Reservation</Container>
+        <div  style={{ width: "1920px", height: "540px", backgroundColor: "#222222",border: "1px solod green"}}>
+            <Container>
+
+            </Container>
         </div>
     )
 }

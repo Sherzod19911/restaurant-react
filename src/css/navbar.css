@@ -231,12 +231,12 @@
     } */
 
   .menu_static_frame {
-    width: 100%;
-    height: 635px;
+    width: 1865px;
+    height: 637px;
     display: flex;
     background: #FFFFFF;
     border: 1px solid black;
-    margin-left: 100px;
+    margin-left: 50px;
   }
 
   .homepage .category_title {
@@ -314,58 +314,66 @@
   }
 
 .Comments_static_frame {
-  width: 100%;
-  height: 635px;
-  margin-top: 45px;
-  border: 2px solid black;
-  margin-left: 100px;
+  width: 1560px;
+  height: 693px;
+  margin-top: 85px;
+  margin-left: 361px;
+  margin-right: 0px;
+  background-color: #fff;
 }
 .homepage .comments {
-  width: 1230px;
-  height: 455px;
+  width: 1184px;
+  height: 470px;
   display: flex;
   flex-direction: row;
-border: 1px solid red;
+  margin-left: 350px;
+
 margin-top: 45px;
 }
 
 .homepage .Comment_category_title {
-  width: 1230px;
-  height: 50px;
+  width: 483px;
+  height: 75px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: "center";
+  justify-content: "center";
   margin-top: 45px;
   font-family: Roboto;
   font-style: normal;
+  margin-left: 700px;
   font-style: normal;
   /* Margin: 20px 0px 20px; */
-  font-size: 50px;
-  line-height: 62px;
+  font-size: 45px;
+  font-weight: 200px;
   color: #222222;
-  border: 2px solid green;
+ 
 }
 .homepage .comments_image {
-  width: 600px;
-  height: 450px;
-  border: 1px solid black;
+  width: 705px;
+  height: 470px;
+ 
+  
   margin-left: 15px;
 }
 
 .homepage .rasim {
-  width: 190px;
-  height: 220px;
+ width: 225px;
+ height: 225px;
 }
+
+
 .homepage .comment_right {
-  width: 530px;
-  height: 451px;
+  width: 470px;
+  height: 470px;
   background-color: #7DA640; 
-  border: 1px solid green;
+
+  
 }
 .homepage .p {
-  width: 420px;
-  height: 270px;
-  border: 1px solid red;
+  width: 390px;
+  height: 304px;
+
+  
   color: #FFF;
   font-size: 18px;
   font-family: Poppins;
@@ -374,9 +382,9 @@ margin-top: 45px;
   padding: 10px;
 }
 .homepage .name {
-  width: 250px;
-  height: 100px;
-  border: 2px solid green;
+  width: 190px;
+  height: 55px;
+
   margin-left: 27px;
   color: #FFFFFF;
 
@@ -466,7 +474,6 @@ margin-top: 45px;
   .shop_left_side {
     width: 300px;
     height: 2200px;
-    border: 1px solid green;
 
   }
 
@@ -485,7 +492,6 @@ margin-top: 45px;
   .shop_right_side.shop_photo {
     width: 330px;
     height: 197px;
-    border: 1px solid green;
 
   }    
   .shop_pizza {
@@ -505,7 +511,6 @@ margin-top: 45px;
    
    width: 300px;
    height: 245px;
-   border: 1px solid black;
 
   }
 
@@ -519,7 +524,6 @@ margin-top: 45px;
     height: 100px;
     margin-left: 25px;
     background-color: #fff;
-    border: 1px solid black;
  
    }
 
@@ -528,7 +532,7 @@ margin-top: 45px;
     height: 765px;
     margin-top: 45px;
     margin-left: 25px;
-     border: 1px solid black;
+
      background-color: #fff;
   
     }
@@ -538,7 +542,7 @@ margin-top: 45px;
      align-items: center;
      justify-content: center;
       font-size: 25px;
-      border: 1px solid black;
+     
    
      }
 

@@ -11,6 +11,7 @@ import IconButton from "@mui/joy/IconButton";
 import { Favorite } from "@mui/icons-material";
 import VisibilityIcon from '@mui/icons-material/LocationOnRounded';
 import { Card } from "@mui/joy";
+import Slider from '@mui/joy/Slider';
 
 
 
@@ -71,6 +72,7 @@ export function ShopPage() {
                   <div className="part5">
                     <h4>
                       Range Price
+                   
                     </h4>
                   </div>
                   
