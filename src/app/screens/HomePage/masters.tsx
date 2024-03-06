@@ -1,5 +1,6 @@
-import { Box, Card, Container, Stack } from "@mui/material";
+import { Box, Card, CardContent, Container, Stack } from "@mui/material";
 import React from "react";
+import Typography from "../../MaterialTheme/typography";
 export function Masters () {
     return(
         <div style={{width: "1920px", height: "689px", border: "1px solid green", backgroundColor: "#F4FDE7"}}>
@@ -7,8 +8,8 @@ export function Masters () {
              Master Chefs
             </Box>
             <Box sx={{ flexDirection:"row", width: "1394px", height: "388px", border: "1px solid green", marginLeft: "264px",marginTop: "40px", backgroundColor: "#F4FDE7"}}>
-            <Stack  flexDirection={"row"}>
-            <Card sx={{ minHeight: 350,   
+            <Stack  flexDirection={"row"} width={"1170px"} height={"388px"} border={"1px solid black"} marginLeft={"110px"}>
+            <Card sx={{ minHeight: 311,   
                                 width: 270,     
                                 marginRight: "30px", border: "1px solid red", cursor: "pointer" 
                                      }}>
@@ -46,12 +47,26 @@ export function Masters () {
                                 width: 270,     
                                 marginRight: "30px", border: "1px solid red", cursor: "pointer" 
                                      }}>
-                                        <img style={{width: "270px", height:"350px"}} src="/restaurant/menu1.jpg"
+                                        <img style={{width: "270px", height:"300px"}} src="/restaurant/menu1.jpg"
                                      loading="lazy"
                                        alt="rasim"
                                              />
+                                             <Box sx={{display: "flex", flexDeriction: "rov"}}>
+                                               <Box>
+                                              <p>225</p>
+                                              <p>55</p>
+   
+                                                </Box> 
+                                                <Box>
+                                                <img src="/restaurant/menu1.jpg" style={{width: "15,75px", height: "18px", border:"1px solid green" }}/>
+                                                </Box>
+                                             </Box>
            
                                    </Card>
+
+                                 
+
+                                  
                                    </Stack>
             </Box>
       
