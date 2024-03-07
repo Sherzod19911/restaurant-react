@@ -4,7 +4,7 @@ import { Box } from "@mui/joy";
 export function CustomersComments() {
     return (
         <div className="Comments_static_frame">
-            <Container sx={{marginLeft: "0px"}} >
+           
                 <Box className="Comment_category_title">
                   Customer's Comment
                 </Box>
@@ -53,7 +53,7 @@ export function CustomersComments() {
                         </Box>
                     </Box>
                 </Stack>
-            </Container>
+            
         </div>
     )
 }

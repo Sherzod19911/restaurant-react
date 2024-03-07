@@ -19,16 +19,25 @@ export function SpecialMenu() {
     return (
         <div className="menu_static_frame">
             <Container>
+           
+              
+              <Stack>
+                
                 <Stack 
                 flexDirection={"column"}
                 justifyContent={"center"}
                 alignItems={"center"}
                 style={{ width:"1170px", height: "535px",marginRight: "375px"}}
-                sx={{mt:"85px"}}
+                sx={{mt:"45px"}}
                 >
+                  
+               
+                         
                     <Box className="category_title">
-                    Special Menu
+                    <div>Special Menu</div>
+                 
                     </Box>
+             
 
                     <Stack 
                     flexDirection={"row"}
@@ -460,6 +469,7 @@ alignItems={"center"}>
      <div>50</div>
     <Favorite sx={{ fontSize: 20, marginLeft: "10px"}}/>
     </Typography>
+
   </Stack>
 </CardOverflow>
 
@@ -472,7 +482,16 @@ alignItems={"center"}>
 </CssVarsProvider>
 
                     </Stack>
+
+                   
                
+               </Stack>
+               <Box sx={{  width:"190px", height: "203px", marginLeft: "1274px", marginRight: "55px", marginTop: "-505px"}}>
+                <img src="/restaurant/Homes.png" alt="" />
+                </Box>
+                <Box sx={{  width:"190px", height:"302px", marginRight: "1462px",marginLeft:"-350px",marginTop: "50px"}}>
+                <img  style={{width: "190px", height: "302px"}} src="/restaurant/leftone.png" alt="" />
+            </Box>
                </Stack>
             </Container>
         </div>

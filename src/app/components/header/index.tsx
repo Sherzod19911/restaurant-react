@@ -88,7 +88,7 @@ import { NavLink } from 'react-router-dom';
                     </Stack>
                 </Stack>
                 <Stack className="head_information" justifyContent={"row"} border={"black"}>
-                    <Stack className="head_information1" justifyContent={"column"} style={{ marginTop: "86px",marginLeft: "24px" }} >
+                    <Stack className="head_information1" justifyContent={"column"} border={"red"} style={{ marginTop: "86px",marginLeft: "24px" }} >
                         <Box className="header1">
                         The Quality Rest Station
                         </Box>
@@ -129,11 +129,11 @@ import { NavLink } from 'react-router-dom';
                     <Stack className="big_img">
 
                         <Box className="right_sides" sx={{mt:'0px'}}>
-                        <img src='./home/blister4.png' alt='rasim'/>  
+                        <img src='./home/blister4.png' style={{width: "327px", height: "795px",marginLeft: "-200px", marginRight: "414px"}} alt='rasim'/>  
 
                         </Box>
                         <Box className="right_side">
-                        <img src='./home/blister3.png' alt='rasim'/> 
+                        <img src='./home/blister3.png'  style={{width: "560px", height: "965px", marginTop: "-133px",marginLeft: "70px"}} alt='rasim'/> 
                         </Box>
                         </Stack>
 

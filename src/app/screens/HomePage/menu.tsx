@@ -4,10 +4,10 @@ import { CardCover } from "@mui/joy";
 const card_list = Array.from(Array(1).keys());
 export function Menu() {
     return (
-        <div style={ { width: "1392px", height: "465px", border: "1px solid red",marginLeft:"264px",marginTop:"38px", backgroundColor: "#FFF"}}>
+        <div style={ { width: "1392px", height: "465px",marginLeft:"264px",marginTop:"38px", backgroundColor: "#FFF"}}>
             <Container >
                 <Stack  >
-                  <Box sx={{width:"366px", height: "75px", border: "1px solid green", marginLeft: "520px",marginTop: "30px"}}>
+                  <Box sx={{width:"366px", height: "75px", marginLeft: "520px",marginTop: "30px"}}>
                   <Typography
                       gutterBottom
                       variant="h1"
@@ -19,14 +19,14 @@ export function Menu() {
                     </Typography>
                   </Box>
                 
-                  <Box sx={{width:"1392px", height: "350px", border: "1px solid green",marginLeft: "-60px"}}>
-                    <Stack flexDirection={"row"}sx={{width:"1170px", height: "350px", border: "1px solid black", marginLeft: "105px"}}>
+                  <Box sx={{width:"1392px", height: "350px",marginLeft: "-60px"}}>
+                    <Stack flexDirection={"row"}sx={{width:"1170px", height: "350px",  marginLeft: "105px"}}>
                     {card_list.map((ele, index) => {
                         return (
 
                             <Card sx={{ minHeight: 350,   
                                 width: 270,     
-                                marginRight: "30px", border: "1px solid red", cursor: "pointer" 
+                                marginRight: "30px",  cursor: "pointer" 
                                      }}>
                                         <img style={{width: "270px", height:"350px"}} src="/restaurant/menu.jpg"
                                      loading="lazy"
@@ -34,7 +34,7 @@ export function Menu() {
                                              />
            
                                    </Card>
-
+      
                       );
                     }
                     )}

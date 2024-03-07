@@ -51,14 +51,14 @@ export function Masters () {
                                      loading="lazy"
                                        alt="rasim"
                                              />
-                                             <Box sx={{display: "flex", flexDeriction: "rov"}}>
+                                             <Box sx={{display: "flex", flexDeriction: "row",justifyContent: "space-around"}}>
                                                <Box>
                                               <p>225</p>
                                               <p>55</p>
    
                                                 </Box> 
-                                                <Box>
-                                                <img src="/restaurant/menu1.jpg" style={{width: "15,75px", height: "18px", border:"1px solid green" }}/>
+                                                <Box sx={{justifyContent: "flex-end"}}>
+                                                <img src="/restaurant/menu1.jpg" style={{width: "30px", height: "30px", border:"1px solid green" }}/>
                                                 </Box>
                                              </Box>
            
