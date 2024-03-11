@@ -1,4 +1,4 @@
-import { Badge, Box, Button, Container, IconButton, Stack } from '@mui/material';
+import { Badge, Box, Button, Card, CardContent,Container,IconButton, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -120,8 +120,65 @@ import { NavLink } from 'react-router-dom';
                             </Button>
                         </Box>
                         </Box>
-                        <Box className="pagination" sx={{mt:'10px'}}>
-                        
+
+                        <Box className="pagination" sx={{mt:'8px'}} display={"flex"} flexDirection={"row"}>
+
+                        <Card sx={{ minHeight: 85,   
+                                width: 293,     
+                                marginRight: "25px",  cursor: "pointer", display:"flex",backgroundColor: "#dee2e6", flexDirection: "row"
+                                     }}>
+                                        <img style={{width: "85px", height:"85px"}} src="/restaurant/zira.jpg"
+                                     loading="lazy"
+                                       alt="rasim"
+                                             />
+                                            <CardContent sx={{width: "218px",height: "73px",  marginLeft: "15px"}}>
+                                         <Typography
+                                        gutterBottom
+                                      variant="h4"
+                                   component="div"
+                                 sx={{ textAlign: "center",color:"#7DA640" }}
+                               >
+                       Breakfast
+                          </Typography>
+                       <Typography
+                        variant="body2" 
+                       color="text.secondary" fontSize={"14px"}
+                       sx={{ textAlign: "center" }}
+                       >
+                      This meals are so totally!
+                      </Typography>
+                  </CardContent>
+           
+                                   </Card>
+
+                                   <Card sx={{ minHeight: 85,   
+                                width: 293,     
+                                marginRight: "25px",  cursor: "pointer",display:"flex", flexDirection: "row",backgroundColor: "#dee2e6",border: "2px solid white"
+                                     }}>
+                                        <img style={{width: "85px", height:"85px"}} src="/restaurant/zira.jpg"
+                                     loading="lazy"
+                                       alt="rasim"
+                                             />
+                                            <CardContent sx={{width: "218px",height: "73px", marginLeft: "15px",}}>
+                                         <Typography
+                                        gutterBottom
+                                      variant="h4"
+                                   component="div"
+                                 sx={{ textAlign: "center",color:"#7DA640" }}
+                               >
+                 Lunch
+                          </Typography>
+                       <Typography
+                        variant="body2" 
+                       color="text.secondary" fontSize={"14px"}
+                       sx={{ textAlign: "center" }}
+                       >
+                      This meals are so totally!
+                      </Typography>
+                  </CardContent>
+           
+                                   </Card>
+
 
                         </Box>
                     </Stack>

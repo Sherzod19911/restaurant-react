@@ -13,7 +13,7 @@ import { OrderPage } from './screens/OrderPage';
 import { ShopPage } from './screens/ShopPage';
 import { CommunityPage } from './screens/CommunityPage';
 import { HelpPage } from './screens/HelpPage';
-import { ContactusPage,  } from './screens/ContactusPage';
+import { ContactPage } from './screens/ContactPage';
 import { LoginPage } from './screens/LoginPage';
 import { HomePage } from './screens/HomePage';
 import { NavbarOthers } from './components/header/others';
@@ -21,6 +21,7 @@ import { NavbarRestaurant } from './components/header/restaurant';
 import { NavbarHome } from './components/header';
 import { Footer } from './components/footer';
 import { MemberPage } from './screens/MemberPage';
+
 
 
 
@@ -69,7 +70,7 @@ function App() {
           <MemberPage />
         </Route>
         <Route path="/Contact Us">
-          <ContactusPage />
+          <ContactPage/>
         </Route>
         <Route path="/KIRISH">
           <LoginPage />

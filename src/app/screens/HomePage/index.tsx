@@ -3,7 +3,7 @@ import React from "react";
 import { SpecialMenu } from "./specialMenu";
 import { TodaysMenu } from "./todaysMenu";
 
-import { Reservation } from "./reservation";
+
 import { CustomersComments } from "./customersComment";
 import { Events } from "./events";
 import { Advertisiments } from "./advertisiment";
@@ -20,7 +20,7 @@ export function HomePage() {
         <TodaysMenu/>
         <Menu/>
         <Advertisiments/>
-        <Reservation/>
+     
         <CustomersComments/>
         <Masters/>
         <Swiper/>
