@@ -11,6 +11,7 @@ import Favorite from '@mui/icons-material/Favorite';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import RemoveRedIEyeIcon from "@mui/icons-material/RemoveRedEye";
 import Badge from "@mui/material/Badge"
+import "../../../css/navbar.css";
 
 const restaurant_list = Array.from(Array(10).keys());
 const product_list = Array.from(Array(8).keys());
@@ -23,21 +24,21 @@ const product_list = Array.from(Array(8).keys());
         <Stack flexDirection={"column"} alignItems={"center"}>
                 <Stack className={"avatar_big_box"}>
                     <Box className={"top_text"}>
-                        <p>Oltin samarqand</p>
+                        <p>Gold Samarkand</p>
                         <Box className={"Single_search_big_box"}>
                             <form className={"Single_search_form"} action={""} method={""}>
                                 <input
                                     type={"search"}
                                     className={"Single_searchInput"}
                                     name={"Single_resSearch"}
-                                    placeholder={"Qidiruv"}
+                                    placeholder={"Search"}
                                 />
                                 <Button
                                     className={"Single_button_search"}
                                     variant='contained'
                                     endIcon={<SearchIcon />}
                                 >
-                                    Izlash
+                                 Search
                                 </Button>
                             </form>
                         </Box>
@@ -73,14 +74,14 @@ const product_list = Array.from(Array(8).keys());
                                     className={"restaurant_avatars"}
                                 >
                                     <img src="/restaurant/shirin.jpg" />
-                                    <span> Samarqand</span>
+                                    <span style={{color: "#222222"}}> Samarqand</span>
                                 </SwiperSlide>
                             )
                         })}
                     </Swiper>
                     <Box
                         className={"next_btn restaurant-next"}
-                        fontStyle={{ color: "white" }}>
+                        fontStyle={{ color: "green" }}>
                         <ArrowForwardIosIcon sx={{fontSize: 40}} />
                     </Box>
                 </Stack>
@@ -186,7 +187,15 @@ const product_list = Array.from(Array(8).keys());
 
         <div className={"review_for_restaurant"}>
            
-              
+               <Box style={{width: "483px", height: "75px", border:"1px solid green",marginLeft: "719px",  display :"flex", justifyContent: "center", alignItems: "center"}}>
+                 <h1>Customer's Comment</h1> 
+                </Box>
+                <Stack sx={{width: ""}}>
+                    <Stack>
+
+                    </Stack>
+                    <Stack></Stack>
+                </Stack>
            
         </div>
 

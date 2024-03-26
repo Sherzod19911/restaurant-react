@@ -5,6 +5,7 @@ import { ChosenDish } from "./chosenDish";
 import { OneRestaurant } from "./oneRestaurant";
 import { AllRestaurants } from "./allRestaurant";
 import "../../../css/restaurant.css";
+import "../../../css/navbar.css";
 import { Services } from "./service";
 
 export function RestaurantPage() {

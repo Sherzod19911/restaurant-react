@@ -5,11 +5,10 @@ import { TodaysMenu } from "./todaysMenu";
 
 
 import { CustomersComments } from "./customersComment";
-import { Events } from "./events";
+
 import { Advertisiments } from "./advertisiment";
 import { Menu } from "./menu";
 import { Masters } from "./masters";
-import { Swiper } from "./swiper";
 import { Footer } from "../../components/footer";
 import { Services } from "./Services";
 
@@ -24,8 +23,7 @@ export function HomePage() {
      
         <CustomersComments/>
         <Masters/>
-        <Swiper/>
-        <Events/>
+       
         <Services/>
          </div>
     )
