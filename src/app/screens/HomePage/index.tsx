@@ -11,6 +11,7 @@ import { Menu } from "./menu";
 import { Masters } from "./masters";
 import { Swiper } from "./swiper";
 import { Footer } from "../../components/footer";
+import { Services } from "./Services";
 
 
 export function HomePage() {
@@ -25,6 +26,7 @@ export function HomePage() {
         <Masters/>
         <Swiper/>
         <Events/>
+        <Services/>
          </div>
     )
 }   

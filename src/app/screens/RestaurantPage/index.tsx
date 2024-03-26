@@ -4,6 +4,8 @@ import { Route, Switch, useRouteMatch } from "react-router-dom";
 import { ChosenDish } from "./chosenDish";
 import { OneRestaurant } from "./oneRestaurant";
 import { AllRestaurants } from "./allRestaurant";
+import "../../../css/restaurant.css";
+import { Services } from "./service";
 
 export function RestaurantPage() {
     let restaurant = useRouteMatch();
@@ -20,7 +22,10 @@ export function RestaurantPage() {
         <Route path={`${restaurant.path}`}>
           <AllRestaurants />
         </Route>
+        <Services/>
+       
       </Switch>
+   
     </div>
   );
 }

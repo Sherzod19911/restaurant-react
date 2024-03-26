@@ -89,19 +89,20 @@
     color: #ffffff;
     font-weight: 700;
     vertical-align: top;
+    cursor: pointer;
   }
   
   .restaurant_page .all_restaurant .search_big_box {
     position: relative;
     width: 360px;
-    height: 33px;
+    height: 49px;
   
     display: flex;
     align-items: center;
     background: #fffcfc;
-    border: 1px solid #ffffff;
+    border: 1px solid #5bcf3d;
     box-shadow: 0px 4px 4px rgba(213, 213, 213, 0.25);
-    border-radius: 18.5px;
+    border-radius: 13.5px;
     box-sizing: border-box;
   }
   
@@ -109,6 +110,7 @@
     position: relative;
     width: 100%;
     display: flex;
+    height: auto;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -117,7 +119,7 @@
   .restaurant_page .all_restaurant .searchInput {
     position: relative;
     width: 245px;
-    height: 29px;
+    height: 49px;
     margin-left: 10px;
     display: flex;
     border: none;
@@ -133,10 +135,10 @@
   .restaurant_page .all_restaurant .button_search {
     position: relative;
     width: 100px;
-    height: 33px;
+    height: 49px;
     display: flex;
     border-radius: 18.5px;
-    background: #f8be69;
+    background: #69f86e;
   }
   
   .restaurant_page .all_restaurant .all_res_box {
@@ -220,7 +222,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    background: #0b0e11;
+    background: #dee2e6;
 }
 
 .restaurant_page .single_restaurant .avatar_big_box {
@@ -502,7 +504,7 @@
 .restaurant_page .single_restaurant .review_for_restaurant {
     margin-top: 60px;
     width: 100%;
-    height: 630px;
+    height: 693px;
     display: flex;
     background-color: #0d1518;
 }
