@@ -12,6 +12,7 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import RemoveRedIEyeIcon from "@mui/icons-material/RemoveRedEye";
 import Badge from "@mui/material/Badge"
 import "../../../css/navbar.css";
+import "../../../css/restaurant.css";
 
 const restaurant_list = Array.from(Array(10).keys());
 const product_list = Array.from(Array(8).keys());
@@ -185,20 +186,71 @@ const product_list = Array.from(Array(8).keys());
         </Stack>
         </Container>
 
-        <div className={"review_for_restaurant"}>
+        <Stack className={"review_for_restaurant"}>
            
-               <Box style={{width: "483px", height: "75px", border:"1px solid green",marginLeft: "719px",  display :"flex", justifyContent: "center", alignItems: "center"}}>
+               <Box style={{width: "483px", height: "75px",marginLeft: "719px",  display :"flex", justifyContent: "center", alignItems: "center"}}>
                  <h1>Customer's Comment</h1> 
                 </Box>
-                <Stack sx={{width: ""}}>
-                    <Stack>
+                <Stack sx={{width: "1170px",height: "466px",marginLeft: "375px",marginTop: "45px",display: "flex",flexDirection:"row"}}>
+                    <Stack sx={{width: "705px",height: "470px",display: "flex",flexWrap: "wrap"}}>
+                    <img style={{width: "230px",height: "230px"}} src="/restaurant/rasim1.jpg"
+                      loading="lazy"
+                           alt="rasim"
+                          />
+
+                    <img style={{width: "230px",height: "230px"}} src="/restaurant/rasim2.jpg"
+                      loading="lazy"
+                           alt="rasim"
+                          />
+
+                 <img style={{width: "230px",height: "230px"}} src="/restaurant/rasim5.jpg"
+                      loading="lazy"
+                           alt="rasim"
+                          />
+                            <img style={{width: "230px",height: "230px"}} src="/restaurant/rasim7.jpg"
+                              loading="lazy"
+                           alt="rasim"
+                          />
+                            <img style={{width: "230px",height: "230px"}} src="/restaurant/rasim5.jpg"
+                      loading="lazy"
+                           alt="rasim"
+                          />
+                            <img style={{width: "230px",height: "230px"}} src="/restaurant/rasim6.jpg"
+                      loading="lazy"
+                           alt="rasim"
+                          />
 
                     </Stack>
-                    <Stack></Stack>
-                </Stack>
-           
-        </div>
+                    <Stack sx={{ width:"470px",
+  height: "470px",
+  backgroundColor: "#7DA640"}}>
+                    <p className="p2">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                        <Box sx={{display: "flex",flexDirection: "row"}}>
+                          <div className="name2">
+                          <h3>John Doe</h3>
+                          <h5>Food Export</h5>
+                          </div>
+                          <div>
+                          <img src="/restaurant/right-quote 1.png"
+                      loading="lazy"
+                           alt="rasim"
+                          />
+                        </div>
+                        </Box>
+                    </Stack>
 
+                </Stack>
+               
+               
+           
+        </Stack>
+        <Box style={{width: "170px", height: "184px",marginLeft: "1780px",marginTop: "-300px"}}>
+        <img style={{width: "170px",height: "184px"}} src="/restaurant/l.png"
+                      loading="lazy"
+                           alt="rasim"
+                          />
+        </Box>
+       
         
 
             <Stack
