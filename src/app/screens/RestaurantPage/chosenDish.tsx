@@ -15,7 +15,7 @@ import { FreeMode, Navigation, Thumbs } from "swiper";
 import Checkbox from "@mui/material/Checkbox";
 import { Swiper, SwiperSlide } from "swiper/react";  
 
-const chosen_list=Array.from(Array(5).keys());
+const chosen_list=Array.from(Array(4).keys());
 
 export function ChosenDish() {  
 
@@ -33,7 +33,7 @@ export function ChosenDish() {
                 modules={[FreeMode, Navigation, Thumbs]}
                 >
                      {chosen_list.map((ele) => {
-                        const image_path = `/others/lagmon.jpg`;
+                        const image_path = `restaurant/photo2.jpg`;
                         return (
                             <SwiperSlide>
                                 <img 
@@ -50,8 +50,8 @@ export function ChosenDish() {
            </Stack>
             <Stack className={"chosen_dish_info_container"}>
                 <Box className={"chosen_dish_info_box"}>
-                    <strong className={"dish_txt"}>Sweet Sandwich</strong>
-                    <span className={"resto_name"}>Texas De Brazil</span>
+                    <strong className={"dish_txt"}>Korean Sandwich</strong>
+                    <span className={"resto_name"}>Gold Samarkand</span>
                     <Box className={"rating_box"}>
                         <Rating name="half-rating" defaultValue={3.5} precision={0.5} />
                         <div
@@ -77,22 +77,19 @@ export function ChosenDish() {
                         </div>
 
                        </Box>
-                       <p className={"dish_desc_info"}>juda mazzali sandvich  </p>
-                       <Marginer
-                        direction="horizontal"  
-                        height="1"
-                        width="100%"
-                        bg="#000000"
-                           />
+                       <p className={"dish_desc_info"}>This is mouth watering meals! </p>
+                      
+                       
+                       
                            <div className={"dish_price_box"}>
-                            <span>Narx:</span>
+                            <span>Price:</span>
                             <span>$15</span>
                            </div>
                            <div className={"button_box"}>
-                             <Button variant="contained">savatga qushish</Button>
+                             <Button variant="contained">Add to Card</Button>
                            </div>
-                        </Box>
-                    </Stack>
+                        </Box>        
+                    </Stack>      
                 </Container>
             </div>
         );
