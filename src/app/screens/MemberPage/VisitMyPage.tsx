@@ -86,7 +86,7 @@ export function VisitMyPage(props: any) {
                   <TabPanel value={"4"}>
                     <Box className={"menu_name"}>Maqola Yozish</Box>
                     <Box className={"write_content"}>
-                    {/* <TuiEditor/> */}
+                     {/* <TuiEditor/>  */}
                     </Box>
                   </TabPanel>
 

@@ -33,7 +33,7 @@ export function ChosenDish() {
                 modules={[FreeMode, Navigation, Thumbs]}
                 >
                      {chosen_list.map((ele) => {
-                        const image_path = `restaurant/photo2.jpg`;
+                        const image_path = `/restaurant/photo2.jpg`;
                         return (
                             <SwiperSlide>
                                 <img 
@@ -46,6 +46,24 @@ export function ChosenDish() {
 
 
                 </Swiper>
+                {/* <Swiper
+            slidesPerView={3}
+            spaceBetween={20}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            {chosen_list.map((ele) => {
+              const image_path = `/restaurant/photo1.jpg`;
+              return (
+                <SwiperSlide style={{ background: "#0b0e11" }}>
+                  <img src={image_path} />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper> */}
 
            </Stack>
             <Stack className={"chosen_dish_info_container"}>
