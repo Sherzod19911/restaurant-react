@@ -14,6 +14,6 @@ export interface BoArticle {
        createdAt: Date,
        updatedAt: Date,
        member_data: Member,
-       mb_liked: MeLiked[];
+       me_liked: MeLiked[];
 
 }

@@ -9,7 +9,7 @@ import { CardCover, CssVarsProvider } from "@mui/joy";
 
 const card_list = Array.from(Array(4).keys());
 
-export function TodaysMenu() {
+export function TodaysMenus() {
     return (
         <div style={{ width:"1920px", height: "1055px",  backgroundColor: "#F4FDE7", marginRight: "50px" }}>
             <Container>

@@ -1,11 +1,8 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { SpecialMenu } from "./specialMenu";
-import { TodaysMenu } from "./todaysMenu";
-
-
+import { TodaysMenus } from "./todaysMenu";
 import { CustomersComments } from "./customersComment";
-
 import { Advertisiments } from "./advertisiment";
 import { Menu } from "./menu";
 import { Masters } from "./masters";
@@ -14,17 +11,19 @@ import { Services } from "./Services";
 
 
 export function HomePage() {
+  useEffect (() => {
+    
+
+}, []);
     return (
     <div className="homepage">
+          <TodaysMenus/>
+          <Menu/>
         <SpecialMenu/>
-        <TodaysMenu/>
-        <Menu/>
         <Advertisiments/>
-     
         <CustomersComments/>
         <Masters/>
-       
-        <Services/>
+       <Services/>
          </div>
     )
 }   
