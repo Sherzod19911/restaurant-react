@@ -22,16 +22,16 @@ const HomePageSlice = createSlice({
         menu: (state, action)=> {
             state.menu = action.payload
         },
-        specialMenu: (state, action)=> {
+        setspecialMenu: (state, action)=> {
             state.specialMenu = action.payload
         },
-        bestBoarticles: (state, action)=> {
+        setbestBoarticles: (state, action)=> {
             state.bestBoarticles = action.payload
         },
-        trendBoarticles: (state, action)=> {
+        settrendBoarticles: (state, action)=> {
             state.trendBoarticles = action.payload
         },
-        newsBoarticles: (state, action)=> {
+        setnewsBoarticles: (state, action)=> {
             state.newsBoarticles = action.payload
         }
     }
@@ -40,9 +40,9 @@ const HomePageSlice = createSlice({
 export const {
     setTodaysMenus, 
     menu, 
-    trendBoarticles, 
-    bestBoarticles,
-    newsBoarticles
+    settrendBoarticles, 
+    setbestBoarticles,
+    setnewsBoarticles
 } = HomePageSlice.actions;
 
 const HomePageReducer = HomePageSlice.reducer;

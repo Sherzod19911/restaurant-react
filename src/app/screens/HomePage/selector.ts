@@ -4,7 +4,7 @@ import { StaticDatePicker } from "@mui/lab"
 
 const selectHomePage = (state: AppRootState) => state.homePage;
 
-export const retrieveTodaysMenu = createSelector(
+export const retrieveTodaysMenus = createSelector(
     selectHomePage,
 (HomePage) => HomePage.todaysMenus
 );

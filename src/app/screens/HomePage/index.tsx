@@ -11,11 +11,12 @@ import { Services } from "./Services";
 import { useDispatch, useSelector} from "react-redux";
 import {Dispatch} from "@reduxjs/toolkit";
 import { createSelector } from "reselect";
-import {setTodaysMenus, bestBoarticles, } from "../../screens/HomePage/slice"
+import {setTodaysMenus, } from "../../screens/HomePage/slice"
 
 import { Restaurant } from "../../../types/user";
 import { Route, Switch,  useRouteMatch   } from "react-router-dom";
-import { TopRestaurant } from "./todaysMenus";
+import {TodaysMenus } from "./todaysMenus";
+import RestaurantApiService from "../../apiservices/restaurantApiServices";
 
 //REDUX SLICE
 const actionDispatch = (dispach: Dispatch) => ({
@@ -24,8 +25,8 @@ const actionDispatch = (dispach: Dispatch) => ({
 //REDUX SELECTOR
 const todaysMenusRetriever = createSelector(
     setTodaysMenus,
-    (TodaysMenu) => ({
-      TodaysMenu,
+    (TodaysMenus) => ({
+      TodaysMenus,
     })
   );
 
@@ -35,16 +36,23 @@ export function HomePage() {
 
   //INITIALIZATION
 const { setTodaysMenus } = actionDispatch(useDispatch());
-const { TodaysMenu} = useSelector(todaysMenusRetriever);
 //selector: store => data
   useEffect (() => {
-    
-    // setTodaysMenus([]);
+    const restaurantService = new RestaurantApiService();
 
+    restaurantService
+    .getTodaysMenus()
+    .then((data) => {
+      setTodaysMenus(data);
+
+
+    }).catch((err: any) => console.log(err));
+    
+   
 }, []);
     return (
     <div className="homepage">
-        <TopRestaurant/>
+        <TodaysMenus/>
         <Menu/>
         <SpecialMenu/>
         <Advertisiments/>
