@@ -31,7 +31,7 @@ import { createSelector } from "reselect";
 
 import {retrieveTodaysMenus } from "../../screens/HomePage/selector"
 import { Restaurant } from "../../../types/user";
-import { serviceApi } from "../../../lib/config";
+import { serverApi } from "../../../lib/config";
 
 
 
@@ -55,8 +55,8 @@ export function TodaysMenus() {
                 <Stack flexDirection="column" alignItems={"center"} sx={{mt:"45px"}}>
               <Box sx={{  width:"1170px", height: "560px", marginRight: "150px", marginTop: "61px" }}>
 
-                <Stack sx={{  width:"288px", height: "78px",marginTop: "40px",display:"flex",justifyContent: "center",alignItems: "center", marginLeft:"400px"}}>
-                <h1>Unique Restaurants</h1>    
+                <Stack sx={{  width:"388px", height: "78px",marginTop: "40px",display:"flex",justifyContent: "center",alignItems: "center", marginLeft:"400px"}}>
+                <h1>Exquisite dining venues</h1>    
                   </Stack> 
                   <Stack sx={{  width:"1170px", height: "350px",marginTop: "40px",display: "flex", flexDirection: "row",justifyContent: "space-between" }}>
                  
@@ -98,9 +98,9 @@ export function TodaysMenus() {
 })} */}
 
 {todaysMenus.map((ele: Restaurant) => {
-                  const image_path = `${serviceApi}/${ele.mb_image}`;
+                  const image_path = `${serverApi}/${ele.mb_image}`;
                   return (
-                  <CssVarsProvider key={ele._id}>
+                  <CssVarsProvider>
 
 
 <Card

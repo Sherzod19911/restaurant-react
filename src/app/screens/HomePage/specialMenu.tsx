@@ -1,5 +1,3 @@
-import React  from "react";
-import { Box, Container, Stack } from "@mui/material";
 import CardCover from '@mui/joy/CardCover';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
@@ -12,10 +10,51 @@ import VisibilityIcon from '@mui/icons-material/LocationOnRounded';
 import { Card } from "@mui/joy";
 
 
+import { Box, Container, Stack } from "@mui/material";
+import React, { useEffect } from "react";
+import MonetizationOn from "@mui/icons-material/MonetizationOn";
+// REDUX
+import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "@reduxjs/toolkit";
+
+import { Product } from "../../../types/product";
+import ProductApiService from "../../apiservices/productApiServices";
+import { retrieveSpecialMenu } from "./selector";
+import { createSelector } from "reselect";
+import { serverApi } from "../../../lib/config";
+import { useHistory } from "react-router-dom";
+import { setSpecialMenu } from './slice';
+
+/** REDUX SLICE */
+const actionDispatch = (dispach: Dispatch) => ({
+  setSpecialMenu: (data: Product[]) => dispach(setSpecialMenu(data)),
+});
+
+/** REDUX SELECTOR */
+const specialMenuRetriever = createSelector(
+  retrieveSpecialMenu,
+  (specialMenu) => ({
+    specialMenu,
+  })
+);
+
 
 
 
 export function SpecialMenu() {
+  /** INITIALIZATIONS */
+  const history = useHistory();
+  const { setSpecialMenu } = actionDispatch(useDispatch());
+  const {specialMenu} = useSelector(specialMenuRetriever);
+  useEffect(() => {
+    const productService = new ProductApiService();
+    productService
+      .getTargetProducts({ order: "product_likes", page: 1, limit: 3})
+      .then((data) => setSpecialMenu(data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  
     return (
         <div className="menu_static_frame">
             <Container>
@@ -46,6 +85,13 @@ export function SpecialMenu() {
                         marginLeft={"80px"}
                         paddingLeft={"100px"}
                         >
+                           {specialMenu.map((product: Product) => {
+              const image_path = `${serverApi}/${product.product_images[0]}`;
+              const size_volume =
+                product.product_collection === "drink"
+                  ? product.product_volume + "l"
+                  : product.product_size + " size";
+              return (
                               <CssVarsProvider>
 
 {/* The first restaurants vs codes */}
@@ -58,7 +104,7 @@ marginRight: "25px", cursor: "pointer"
 >    
 <CardCover >
 
-<img className="menu_photo" src="/restaurant/piz1.jpg"
+<img className="menu_photo" src={image_path}
       loading="lazy"
       alt="rasim"
    />
@@ -74,7 +120,7 @@ marginRight: "25px", cursor: "pointer"
   }}
  />
  <CardContent sx={{ justifyContent: 'flex-end' }}>
- <img className="menu_photo" src="/restaurant/pizza.png"
+ <img className="menu_photo" src={image_path}
       loading="lazy"
       alt="rasim"
    />
@@ -156,330 +202,14 @@ alignItems={"center"}>
 
 </Card>
 
-<Card
-sx={{ minHeight: 420,   
-width: 270,     
-marginRight: "25px", cursor: "pointer" 
-}}
->    
-<CardCover >
-
-<img className="menu_photo" src="/restaurant/piz1.jpg"
-      loading="lazy"
-      alt="rasim"
-   />
- 
-   
-   </CardCover>
-
-
- <CardCover
-     sx={{
- background: "#F5F5F5"
-       
-  }}
- />
- <CardContent sx={{ justifyContent: 'flex-end' }}>
- <img className="menu_photo" src="/restaurant/piz1.jpg"
-      loading="lazy"
-      alt="rasim"
-   />
- 
-  <Typography className="pizza" level="h3" fontSize="24px" textColor="#2222222" mb={"1"} justifyContent={"center"}
-alignItems={"center"}>
-   Rice
- </Typography>
- <Typography
-   justifyContent={"center"}
-   alignItems={"center"} marginLeft={"25px"}
-   >
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-
-    <h5 className="price">$550</h5>
-    <a className="buttun_card">Add to Cart</a>
-  </Typography>
-
-  </CardContent>
-  <CardOverflow 
-  sx={{
-   display: "flex", 
-   gap: 1.5, py: 1.5, 
-   px: "var(--Card-padding)", 
-   borderTop: "1px solid"
-   }}
-   >
-   <IconButton
-      aria-label="Like minimal photography" 
-      size="md" 
-      variant="solid" 
-      color="neutral"
-           sx={{
-              position: "absolute",
-              zIndex: 2,
-              borderRadius: "50%",
-              right: "1rem",
-              bottom: 45,
-              transform: "translateY(50%)",
-              color: "rgba(0,0,0,.4)"
-
-
-           }}
-         >
-         <Favorite style={{ fill: "white"}}/>
-
-         </IconButton>
-        <Stack sx={{flexDirection: "row"}}>
-     <Typography 
-
-       sx={{
-         fontWeight: "md", 
-         color: "neutral.300", 
-         alignItems: "center",
-         display: "flex" }}
-        >
-       100 {" "}
-       <VisibilityIcon 
-         sx={{ 
-          fontSize: 20, 
-          marginLeft: "10px"}}/>
-      </Typography>
-
-      {/* <Box sx={{ width: 2, bgcolor: "divider", ml: "6px", mr: "6px"}}/> */}
-     <Typography 
-       sx={{ 
-        fontWeight: "md", 
-        color: "neutral.300", 
-        alignItems: "center", 
-        display: "flex" 
-       }}
-      >      
-
-     <div>50</div>
-    <Favorite sx={{ fontSize: 20, marginLeft: "10px"}}/>
-    </Typography>
-  </Stack>
-</CardOverflow>
-
-</Card>
-
-<Card
-sx={{ minHeight: 420,   
-width: 270,     
-marginRight: "25px", cursor: "pointer" 
-}}
->    
-<CardCover >
-
-<img className="menu_photo" src="/restaurant/piz1.jpg"
-      loading="lazy"
-      alt="rasim"
-   />
- 
-   
-   </CardCover>
-
-
- <CardCover
-     sx={{
- background: "#F5F5F5"
-       
-  }}
- />
- <CardContent sx={{ justifyContent: 'flex-end' }}>
- <img className="menu_photo" src="/restaurant/greensalad.jpg"
-      loading="lazy"
-      alt="rasim"
-   />
- 
-  <Typography className="pizza" level="h3" fontSize="24px" textColor="#2222222" mb={"1"} justifyContent={"center"}
-alignItems={"center"}>
-   Green Salad
- </Typography>
- <Typography
-   justifyContent={"center"}
-   alignItems={"center"} marginLeft={"25px"}
-   >
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-
-    <h5 className="price">$550</h5>
-    <a className="buttun_card">Add to Cart</a>
-  </Typography>
-
-  </CardContent>
-  <CardOverflow 
-  sx={{
-   display: "flex", 
-   gap: 1.5, py: 1.5, 
-   px: "var(--Card-padding)", 
-   borderTop: "1px solid"
-   }}
-   >
-   <IconButton
-      aria-label="Like minimal photography" 
-      size="md" 
-      variant="solid" 
-      color="neutral"
-           sx={{
-              position: "absolute",
-              zIndex: 2,
-              borderRadius: "50%",
-              right: "1rem",
-              bottom: 45,
-              transform: "translateY(50%)",
-              color: "rgba(0,0,0,.4)"
-
-
-           }}
-         >
-         <Favorite style={{ fill: "white"}}/>
-
-         </IconButton>
-        <Stack sx={{flexDirection: "row"}}>
-     <Typography 
-
-       sx={{
-         fontWeight: "md", 
-         color: "neutral.300", 
-         alignItems: "center",
-         display: "flex" }}
-        >
-       100 {" "}
-       <VisibilityIcon 
-         sx={{ 
-          fontSize: 20, 
-          marginLeft: "10px"}}/>
-      </Typography>
-
-      {/* <Box sx={{ width: 2, bgcolor: "divider", ml: "6px", mr: "6px"}}/> */}
-     <Typography 
-       sx={{ 
-        fontWeight: "md", 
-        color: "neutral.300", 
-        alignItems: "center", 
-        display: "flex" 
-       }}
-      >      
-
-     <div>50</div>
-    <Favorite sx={{ fontSize: 20, marginLeft: "10px"}}/>
-    </Typography>
-  </Stack>
-</CardOverflow>
-
-</Card>
-
-<Card
-sx={{ minHeight: 420,   
-width: 270,     
-marginRight: "25px", cursor: "pointer" 
-}}
->    
-<CardCover >
-
-<img className="menu_photo" src="/restaurant/piz1.jpg"
-      loading="lazy"
-      alt="rasim"
-   />
- 
-   
-   </CardCover>
-
-
- <CardCover
-     sx={{
- background: "#F5F5F5"
-       
-  }}
- />
- <CardContent sx={{ justifyContent: 'flex-end' }}>
- <img className="menu_photo" src="/restaurant/pasta.jpg"
-      loading="lazy"
-      alt="rasim"
-   />
- 
-  <Typography className="pizza" level="h3" fontSize="24px" textColor="#2222222" mb={"1"} justifyContent={"center"}
-alignItems={"center"}>
-   Pasta
- </Typography>
- <Typography
-   justifyContent={"center"}
-   alignItems={"center"} marginLeft={"25px"}
-   >
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-
-    <h5 className="price">$550</h5>
-    <a className="buttun_card">Add to Cart</a>
-  </Typography>
-
-  </CardContent>
-  <CardOverflow 
-  sx={{
-   display: "flex", 
-   gap: 1.5, py: 1.5, 
-   px: "var(--Card-padding)", 
-   borderTop: "1px solid"
-   }}
-   >
-   <IconButton
-      aria-label="Like minimal photography" 
-      size="md" 
-      variant="solid" 
-      color="neutral"
-           sx={{
-              position: "absolute",
-              zIndex: 2,
-              borderRadius: "50%",
-              right: "1rem",
-              bottom: 45,
-              transform: "translateY(50%)",
-              color: "rgba(0,0,0,.4)"
-
-
-           }}
-         >
-         <Favorite style={{ fill: "white"}}/>
-
-         </IconButton>
-        <Stack sx={{flexDirection: "row"}}>
-     <Typography 
-
-       sx={{
-         fontWeight: "md", 
-         color: "neutral.300", 
-         alignItems: "center",
-         display: "flex" }}
-        >
-       100 {" "}
-       <VisibilityIcon 
-         sx={{ 
-          fontSize: 20, 
-          marginLeft: "10px"}}/>
-      </Typography>
-
-      {/* <Box sx={{ width: 2, bgcolor: "divider", ml: "6px", mr: "6px"}}/> */}
-     <Typography 
-       sx={{ 
-        fontWeight: "md", 
-        color: "neutral.300", 
-        alignItems: "center", 
-        display: "flex" 
-       }}
-      >      
-
-     <div>50</div>
-    <Favorite sx={{ fontSize: 20, marginLeft: "10px"}}/>
-    </Typography>
-
-  </Stack>
-</CardOverflow>
-
-</Card>
 
 
 
 
 
 </CssVarsProvider>
+ );
+                           })};
 
                     </Stack>
 

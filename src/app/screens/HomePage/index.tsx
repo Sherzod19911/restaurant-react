@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { SpecialMenu } from "./specialMenu";
 import { CustomersComments } from "./customersComment";
 import { Advertisiments } from "./advertisiment";
-import { Menu } from "./menu";
+import {  MenuPanel } from "./menu";
 import { Masters } from "./masters";
 import { Footer } from "../../components/footer";
 import { Services } from "./Services";
@@ -11,7 +11,7 @@ import { Services } from "./Services";
 import { useDispatch, useSelector} from "react-redux";
 import {Dispatch} from "@reduxjs/toolkit";
 import { createSelector } from "reselect";
-import {setTodaysMenus, } from "../../screens/HomePage/slice"
+import {setMenuPanel,  setTodaysMenus, } from "../../screens/HomePage/slice"
 
 import { Restaurant } from "../../../types/user";
 import { Route, Switch,  useRouteMatch   } from "react-router-dom";
@@ -35,7 +35,7 @@ const todaysMenusRetriever = createSelector(
 export function HomePage() {
 
   //INITIALIZATION
-const { setTodaysMenus } = actionDispatch(useDispatch());
+const { setTodaysMenus,  } = actionDispatch(useDispatch());
 //selector: store => data
   useEffect (() => {
     const restaurantService = new RestaurantApiService();
@@ -47,13 +47,18 @@ const { setTodaysMenus } = actionDispatch(useDispatch());
 
 
     }).catch((err: any) => console.log(err));
+
+    restaurantService.getRestaurants({page: 1, limit: 4, order: 'mb_point'}).then(data => {
+      setMenuPanel(data);
+
+    }).catch(err => console.log(err));
     
    
 }, []);
     return (
     <div className="homepage">
         <TodaysMenus/>
-        <Menu/>
+        <MenuPanel/>
         <SpecialMenu/>
         <Advertisiments/>
         <CustomersComments/>

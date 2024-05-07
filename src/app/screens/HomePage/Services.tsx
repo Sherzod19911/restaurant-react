@@ -1,34 +1,82 @@
-import { Box, Container, Stack } from "@mui/material"
+//import { Box, Container, Stack } from "@mui/material"
 import React from "react"
+import Box from '@mui/joy/Box';
+import Card from '@mui/joy/Card';
+import CardCover from '@mui/joy/CardCover';
+import CardContent from '@mui/joy/CardContent';
+import Typography from '@mui/joy/Typography';
+import { Container, Stack } from "@mui/material";
  export function Services () {
     return (
      <div style={{}}>
         <Container>
         <Stack sx={{width: "1171px", height: "620px",border: "1px solid green",mt:"100px",marginLeft:"100px"}}>
-            <Box style={{width:"814px", height:"146px",marginLeft: "178px"}}>
+
+        {/* <Card component="li" sx={{ minWidth: 300, flexGrow: 1 }}>
+        <CardCover>
+          <img
+            src="https://images.unsplash.com/photo-1502657877623-f66bf489d236?auto=format&fit=crop&w=800"
+            srcSet="https://images.unsplash.com/photo-1502657877623-f66bf489d236?auto=format&fit=crop&w=800&dpr=2 2x"
+            loading="lazy"
+            alt=""
+          />
+        </CardCover>
+        <CardContent>
+          <Typography
+            level="body-lg"
+            fontWeight="lg"
+            textColor="#fff"
+            mt={{ xs: 12, sm: 18 }}
+          >
+            Image
+          </Typography>
+        </CardContent>
+      </Card>
+      <Card component="li" sx={{ minWidth: 300, flexGrow: 1 }}>
+        <CardCover>
+          <video
+            autoPlay
+            loop
+            muted
+            poster="https://assets.codepen.io/6093409/river.jpg"
+          >
+            <source
+              src="https://assets.codepen.io/6093409/river.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </CardCover>
+        <CardContent>
+          <Typography
+            level="body-lg"
+            fontWeight="lg"
+            textColor="#fff"
+            mt={{ xs: 12, sm: 18 }}
+          >
+            Video
+          </Typography>
+        </CardContent>
+      </Card> */}
+
+            {/* <Box style={{width:"814px", height:"146px",marginLeft: "178px"}}>
                <h1 style={{width:"734px", height:"60px", display: "flex", alignItems: "center", justifyContent: "center",marginTop: "2px"}}>We invite you to Visit Our Restaurant</h1>
                 <p  style={{width:"814px", height: "72px",marginTop: "3px"}}>The restaurant industry encompasses businesses that prepare and serve food and beverages to customers. This sector is crucial as it contributes significantly to the global economy, reflects cultural diversity.
                 
                 <div className="ad_frame1 ">
-          <video
-            className={"ads_video"}
-            autoPlay={true}
-            loop
-            muted
-            playsInline
-            data-video-media=""
-          >
-             <source
-          // data-src="https://fnb-p-c6e19b1675f4.imgix.net/87994cc2-0b2c-4b4e-a402-45c9834c267e/HP-6s-1920x1080-3_def.mp4?auto=compress%2Cformat&amp;fit=min&amp;fm=jpg&amp;q=80"
-          type="video.webm"
-          src="./restaurant/video.webm"     
-        />
-          </video>
+          
+                <CardCover>
+          <img
+            src="https://images.unsplash.com/photo-1502657877623-f66bf489d236?auto=format&fit=crop&w=800"
+            srcSet="https://images.unsplash.com/photo-1502657877623-f66bf489d236?auto=format&fit=crop&w=800&dpr=2 2x"
+            loading="lazy"
+            alt=""
+          />
+        </CardCover>
         </div>                                
                 </p>
 
             </Box>
-            <Box  style={{width:"1170px", height:"430px",border: "1px solid red",marginTop: "44px"}} ></Box>
+            <Box  style={{width:"1170px", height:"430px",border: "1px solid red",marginTop: "44px"}} ></Box> */}
             
         </Stack>
 

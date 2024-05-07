@@ -1,6 +1,6 @@
 import { createSelector } from "@reduxjs/toolkit"
 import { AppRootState } from "../../../types/screen"
-import { StaticDatePicker } from "@mui/lab"
+
 
 const selectHomePage = (state: AppRootState) => state.homePage;
 
@@ -9,9 +9,9 @@ export const retrieveTodaysMenus = createSelector(
 (HomePage) => HomePage.todaysMenus
 );
 
-export const retrieveMenu = createSelector(
+export const retrieveMenuPanel = createSelector(
     selectHomePage,
-(HomePage) => HomePage.menu
+(HomePage) => HomePage.menuPanel
 );
 
 export const retrieveSpecialMenu = createSelector(

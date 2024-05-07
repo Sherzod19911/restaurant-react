@@ -4,12 +4,12 @@ import { SpecialMenu } from "./specialMenu";
 
 const initialState :  HomePageState = {
     todaysMenus: [],
-    menu: [],
+    menuPanel: [],
     specialMenu: [],
     bestBoarticles: [],
     trendBoarticles: [],
     newsBoarticles: [],
-
+    
 }
 
 const HomePageSlice = createSlice({
@@ -19,19 +19,19 @@ const HomePageSlice = createSlice({
         setTodaysMenus: (state, action)=> {
             state.todaysMenus = action.payload
         },
-        menu: (state, action)=> {
-            state.menu = action.payload
+        setMenuPanel: (state, action)=> {
+            state.menuPanel = action.payload
         },
-        setspecialMenu: (state, action)=> {
+        setSpecialMenu: (state, action)=> {
             state.specialMenu = action.payload
         },
-        setbestBoarticles: (state, action)=> {
+        setBestBoarticles: (state, action)=> {
             state.bestBoarticles = action.payload
         },
-        settrendBoarticles: (state, action)=> {
+        setTrendBoarticles: (state, action)=> {
             state.trendBoarticles = action.payload
         },
-        setnewsBoarticles: (state, action)=> {
+        setNewsBoarticles: (state, action)=> {
             state.newsBoarticles = action.payload
         }
     }
@@ -39,10 +39,11 @@ const HomePageSlice = createSlice({
 
 export const {
     setTodaysMenus, 
-    menu, 
-    settrendBoarticles, 
-    setbestBoarticles,
-    setnewsBoarticles
+    setMenuPanel, 
+    setSpecialMenu, 
+    setBestBoarticles,
+    setTrendBoarticles,
+    setNewsBoarticles
 } = HomePageSlice.actions;
 
 const HomePageReducer = HomePageSlice.reducer;

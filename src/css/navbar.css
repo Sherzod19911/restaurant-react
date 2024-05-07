@@ -238,6 +238,7 @@
     background: #FFFFFF;
 
     margin-left: 50px;
+    margin-top: 90px;
   }
 
   .homepage .category_title {
@@ -289,7 +290,7 @@
     Margin: 0px 27px 0px;
     margin-left: 50px;
     padding: 9px 20px;
-    background: #7DA640;
+    background: #8cb482;
     border: 2px solid green;
     color: #fff;
     border-radius: 10px;
