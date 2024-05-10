@@ -273,11 +273,11 @@
    
   }
   .homepage .menu_photo {
-    width: 132px;
-    height: 132px;
-    margin-left: 55px;
+    width: 320px;
+    height: 320px;
+    /* margin-left: 55px; */
    
-    margin-top: 10px;
+   /* margin-top: 10px;*/
 
   }
 

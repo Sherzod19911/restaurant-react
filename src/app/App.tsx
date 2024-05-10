@@ -21,6 +21,7 @@ import { NavbarRestaurant } from './components/header/restaurant';
 import { NavbarHome } from './components/header';
 import { Footer } from './components/footer';
 import { MemberPage } from './screens/MemberPage';
+import AuthenticationModal from './components/auth';
 
 
 
@@ -81,7 +82,7 @@ function App() {
       </Switch>
 
 <Footer/>
-
+<AuthenticationModal/>
 
   </Router>
   );

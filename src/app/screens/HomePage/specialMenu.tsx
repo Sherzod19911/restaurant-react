@@ -98,16 +98,16 @@ export function SpecialMenu() {
 
 <Card
 sx={{ minHeight: "420px",   
-width: 270,     
+width: "350px",     
 marginRight: "25px", cursor: "pointer" 
 }}
 >    
 <CardCover >
 
-<img className="menu_photo" src={image_path}
+{/* <img className="menu_photo" src={image_path}
       loading="lazy"
       alt="rasim"
-   />
+   /> */}
  
    
    </CardCover>
@@ -115,7 +115,7 @@ marginRight: "25px", cursor: "pointer"
 
  <CardCover
      sx={{
- background: "#F5F5F5"
+ background: "#22222"
        
   }}
  />
@@ -127,15 +127,16 @@ marginRight: "25px", cursor: "pointer"
  
   <Typography className="pizza" level="h3" fontSize="24px" textColor="#2222222" mb={"1"} justifyContent={"center"}
 alignItems={"center"}>
-   Pizza
+   {product.product_name}
  </Typography>
  <Typography
    justifyContent={"center"}
    alignItems={"center"} marginLeft={"25px"}
    >
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-
-    <h5 className="price">$550</h5>
+  {product.product_description}
+    <h5 className="price">
+       <MonetizationOn />
+      {product.product_price}</h5>
     <a className="buttun_card">Add to Cart</a>
   </Typography>
 
