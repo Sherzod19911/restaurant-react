@@ -1,6 +1,7 @@
 import { Badge, Box, Button, Card, CardContent,Container,IconButton, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { sweetTopSuccessAlert } from '../../../lib/sweetAlert';
 
  export function NavbarHome(props: any)  {
     return (
@@ -80,7 +81,14 @@ import { NavLink } from 'react-router-dom';
                     </Box>    
                     <Box>
                  
-                        <Button type='submit' href="LoginPage" variant='contained' style={{color: "#ffffff", background: "#1976D2"}}>
+                        {/* <Button type='submit' href="LoginPage" variant='contained' style={{color: "#ffffff", background: "#1976D2"}}> */}
+                        <Button 
+                        variant='contained' type="submit"
+                        style={{color: "#ffffff", background: "#1976D2"}}
+                       // onClick={() => alert("clicked")}
+                      // onClick={() => sweetTopSuccessAlert("clicked", 3000)}
+                      onClick = {props.handleLoginOpen}
+                        >
                         KIRISH
                         </Button>
 
@@ -109,8 +117,26 @@ import { NavLink } from 'react-router-dom';
                         
                         <Box className="button" display={"flex"}  flexDirection={"row"} >
                         <Box sx={{mt:'40px'}}>
-                            <Button variant='contained' style={{width:"166px", height: "57px", background: '#7DA640',color:'#ffffff'}}>
-                            Book a Table
+                            {/* <Button variant='contained' style={{width:"166px", height: "57px", background: '#7DA640',color:'#ffffff'}}
+                              onClick = {props.handleSignUpOpen }
+
+                              // onClick={() => setValue(!value)} 
+                                 // onClick={() => alert("clicked")}>
+                            Sign Up
+                            </Button> */}
+
+                            <Button
+                            variant='contained' 
+                            style={{width:"210px", 
+                            height: "60px", 
+                            background: '#1976d2',
+                            color:'#ffffff',}}
+                            onClick = {props.handleSignUpOpen }
+
+                            // onClick={() => setValue(!value)} 
+                               // onClick={() => alert("clicked")}
+                            >
+                            RO’YHATDAN O’TISH
                             </Button>
                         </Box>
 

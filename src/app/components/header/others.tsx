@@ -73,7 +73,9 @@ export function NavbarOthers(props: any)  {
                    </Box>    
                    <Box>
                 
-                       <Button type='submit' variant='contained' style={{color: "#ffffff", background: "#1976D2"}}>
+                   <Button variant='contained' style={{color: "#ffffff", background: "#1976D2"}}
+                           onClick = {props.handleLoginOpen}
+                        >
                        KIRISH
                        </Button>
 

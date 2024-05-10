@@ -73,7 +73,9 @@ import { NavLink } from 'react-router-dom';
                     </Box>    
                     <Box>
                  
-                        <Button type='submit' variant='contained' style={{color: "#ffffff", background: "#1976D2"}}>
+                    <Button variant='contained' style={{color: "#ffffff", background: "#1976D2"}}
+                        onClick = {props.handleLoginOpen}
+                        >
                         KIRISH
                         </Button>
 
