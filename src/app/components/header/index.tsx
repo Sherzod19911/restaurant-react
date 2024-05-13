@@ -1,7 +1,11 @@
-import { Badge, Box, Button, Card, CardContent,Container,IconButton, Stack, Typography } from '@mui/material';
+import { Badge, Box, Button, Card, CardContent,Container,IconButton, Stack, ListItemIcon, Menu, MenuItem, Typography } from '@mui/material';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { sweetTopSuccessAlert } from '../../../lib/sweetAlert';
+//import { sweetTopSuccessAlert } from '../../../lib/sweetAlert';
+import { Logout } from '@mui/icons-material';
+//import { verifiedMemberData } from '../../apiServices/verify';
+
 
  export function NavbarHome(props: any)  {
     return (
@@ -45,6 +49,15 @@ import { sweetTopSuccessAlert } from '../../../lib/sweetAlert';
                             Community 
                             </NavLink>
                     </Box>
+                     {props.verifiedMemberData
+
+                    ? (
+                     <Box className="hover-line" onClick={props.setPath}>
+                     <NavLink to="/member-page" 
+                     activeClassName="underLine">
+                         Sahifam
+                         </NavLink>
+                 </Box> ) : null }
                     <Box className="hover-line" onClick={props.setPath}>
                         <NavLink to="/Help" 
                         activeClassName="underLine">
@@ -79,22 +92,71 @@ import { sweetTopSuccessAlert } from '../../../lib/sweetAlert';
                             </Badge>
                         </IconButton>
                     </Box>    
-                    <Box>
-                 
-                        {/* <Button type='submit' href="LoginPage" variant='contained' style={{color: "#ffffff", background: "#1976D2"}}> */}
-                        <Button 
-                        variant='contained' type="submit"
-                        style={{color: "#ffffff", background: "#1976D2"}}
-                       // onClick={() => alert("clicked")}
-                      // onClick={() => sweetTopSuccessAlert("clicked", 3000)}
-                      onClick = {props.handleLoginOpen}
-                        >
-                        KIRISH
-                        </Button>
+                      {!props.verifiedMemberData ? 
 
-                    </Box>
-                    </Stack>
-                </Stack>
+
+                 ( <Box>
+                    <Button 
+                    variant='contained' 
+                    style={{color: "#ffffff", background: "#1976D2"}}
+                   // onClick={() => alert("clicked")}
+                  // onClick={() => sweetTopSuccessAlert("clicked", 3000)}
+                  onClick = {props.handleLoginOpen}
+                    >
+                    KIRISH
+                    </Button>
+                </Box>
+                ) : (
+                <img style={{width: "48px",height: "48px", borderRadius: "24px"}} 
+                src={props.verifiedMemberData.mb_image}
+                onClick={props.handleLogOutClick}
+                />
+                )}
+
+               <Menu
+              anchorEl={props.anchorEl}
+              open={props.open}
+              onClose={props.handleCloseLogOut}
+              onClick={props.handleCloseLogOut}
+              PaperProps={{
+                elevation: 0,
+                sx: {
+                  overflow: "visible",
+                  filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                  mt: 1.5,
+                  "& .MuiAvatar-root": {
+                    width: 32,
+                    height: 32,
+                    ml: -0.5,
+                    mr: 1,
+                  },
+                  "&:before": {
+                    content: '""',
+                    display: "block",
+                    position: "absolute",
+                    top: 0,
+                    right: 14,
+                    width: 10,
+                    height: 10,
+                    bgcolor: "background.paper",
+                    transform: "translateY(-50%) rotate(45deg)",
+                    zIndex: 0,
+                  },
+                },
+              }}
+              transformOrigin={{ horizontal: "right", vertical: "top" }}
+              anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+            >
+              <MenuItem
+              onClick={props.handleLogOutRequest}>
+                <ListItemIcon>
+                  <Logout fontSize="small" style={{ color: "blue" }} />
+                </ListItemIcon>
+                Logout
+              </MenuItem>
+            </Menu>
+          </Stack>
+        </Stack>
                 <Stack className="head_information" justifyContent={"row"} border={"black"}>
                     <Stack className="head_information1" justifyContent={"column"} border={"red"} style={{ marginTop: "86px",marginLeft: "24px" }} >
                         <Box className="header1">
@@ -125,19 +187,24 @@ import { sweetTopSuccessAlert } from '../../../lib/sweetAlert';
                             Sign Up
                             </Button> */}
 
-                            <Button
-                            variant='contained' 
-                            style={{width:"210px", 
-                            height: "60px", 
-                            background: '#1976d2',
-                            color:'#ffffff',}}
-                            onClick = {props.handleSignUpOpen }
+                            {!props.verifiedMemberData ? (
+                                <Button
+                                variant='contained' 
+                                style={{width:"210px", 
+                                height: "60px", 
+                                background: '#1976d2',      
+                                color:'#ffffff',}}
+                                onClick = {props.handleSignUpOpen }
 
-                            // onClick={() => setValue(!value)} 
-                               // onClick={() => alert("clicked")}
-                            >
-                            RO’YHATDAN O’TISH
-                            </Button>
+                                // onClick={() => setValue(!value)} 
+                                   // onClick={() => alert("clicked")}
+                                >
+                                RO’YHATDAN O’TISH
+                                </Button>
+                           )
+                           :
+                           null}
+
                         </Box>
 
                         <Box sx={{mt:'40px'}}   style={{marginLeft:"25px" }}>

@@ -15,7 +15,7 @@ class RestaurantApiService {
     }
  async getTodaysMenus () {
        try {
-            const url = "/restaurants?order=top&page=1&limit=4",
+            const url = "/restaurants?order=top&page=1&limit=3",
             result = await axios.get(this.path + url, { withCredentials: true });
         console.log("1");
          console.log("url::", url);

@@ -220,7 +220,7 @@
 // }          
 
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Box,  Stack } from "@mui/material";
 
 import { Favorite, Visibility } from "@mui/icons-material";
@@ -229,20 +229,22 @@ import { CardOverflow, Card, CssVarsProvider, AspectRatio, IconButton, Typograph
 import CallIcon from "@mui/icons-material/Call";
 
 //REDUX
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
 import { Restaurant } from "../../../types/user";
 import { serverApi } from "../../../lib/config";
 import { retrieveMenuPanel } from "./selector";
-import RestaurantApiService from "../../apiservices/restaurantApiServices"
+import { setMenuPanel } from "./slice";
+import { Dispatch } from "@reduxjs/toolkit";
+import RestaurantApiService from "../../apiservices/restaurantApiServices";
 
 
-
+// REDUX SLICE
+const actionDispatch = (dispach: Dispatch) => ({
+  setMenuPanel: (data: Restaurant[]) => dispach(setMenuPanel(data)),
+});
 
 //REDUX SELECTOR
-
-
-
 const menuPanelRetriever = createSelector(
   retrieveMenuPanel,
   (menuPanel) => ({
@@ -253,6 +255,18 @@ const menuPanelRetriever = createSelector(
 export function MenuPanel() {
   const { menuPanel } = useSelector(menuPanelRetriever);
   console.log("menuPanel::",menuPanel);
+  const { setMenuPanel } = actionDispatch(useDispatch());
+  useEffect (() => {
+    const restaurantService = new RestaurantApiService();
+
+    
+    restaurantService.getRestaurants({page: 1, limit: 3, order: 'mb_point'}).then(data => {
+      setMenuPanel(data);
+
+    }).catch(err => console.log(err));
+    
+   
+}, []);
   return (
     <div style={{ width: "1920px", height: "850px", marginLeft: "30px", marginTop: "38px", backgroundColor: "#000000ff" }}>
 
@@ -301,9 +315,13 @@ export function MenuPanel() {
                       >
                         <Favorite
                           style={{
-                            color: "white"
+                            fill: 
+                            ele?.mb_liked && ele?.mb_liked[0]?.my_favorite
+                            ? "red"
+                            : "white",
                           }}
-                        />
+                          />
+                        
                       </IconButton>
                     </CardOverflow>
 

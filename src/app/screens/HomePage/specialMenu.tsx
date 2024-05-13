@@ -18,12 +18,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
 
 import { Product } from "../../../types/product";
-import ProductApiService from "../../apiservices/productApiServices";
+
 import { retrieveSpecialMenu } from "./selector";
 import { createSelector } from "reselect";
 import { serverApi } from "../../../lib/config";
 import { useHistory } from "react-router-dom";
 import { setSpecialMenu } from './slice';
+import ProductApiService from '../../apiservices/productApiServices';
 
 /** REDUX SLICE */
 const actionDispatch = (dispach: Dispatch) => ({

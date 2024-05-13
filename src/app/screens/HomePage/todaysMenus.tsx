@@ -24,6 +24,14 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import IconButton from "@mui/joy/IconButton";
 import { Favorite } from "@mui/icons-material";
 import VisibilityIcon from '@mui/icons-material/LocationOnRounded';
+import { sweetErrorHandling } from "../../../lib/sweetAlert";
+
+import { Definer } from "../../../lib/Definer";
+import assert from "assert";
+
+import { useRef } from "react";
+import { MemberLiken } from "../../../types/others";
+import { useHistory } from "react-router-dom";
 
 //REDUX
 import { useSelector} from "react-redux";
@@ -32,6 +40,7 @@ import { createSelector } from "reselect";
 import {retrieveTodaysMenus } from "../../screens/HomePage/selector"
 import { Restaurant } from "../../../types/user";
 import { serverApi } from "../../../lib/config";
+import MemberApiService from "../../apiservices/memberApiServices";
 
 
 
@@ -47,8 +56,44 @@ const todaysMenuRetriever = createSelector(
 //const card_list = Array.from(Array(4).keys());
 
 export function TodaysMenus() {
+   //INITIALIZITION
+
+   const history = useHistory();
   const {todaysMenus} = useSelector(todaysMenuRetriever);
   console.log("todaysMeenus::", todaysMenus);
+
+  const refs: any = useRef([]);
+
+         /** HANDLERS */    
+
+         const chosenRestaurantHandler = (id: string) => {
+          history.push(`/restaurant/${id}`);
+         }
+         const targetLikeTop =  async (e: any, id: string) => {
+          try {
+             assert.ok(localStorage.getItem("member_data"), Definer.auth_err1);
+             const memberService = new MemberApiService();
+              const like_result: any = await memberService.memberLikeTarget({
+                like_ref_id: id, 
+                group_type: 'member'
+              });
+              assert.ok(like_result, Definer.general_err1);
+              if(like_result.like_status >0) {
+                e.target.style.fill = 'red';
+                refs.current[like_result.like_ref_id].innerHTML++;
+
+
+              }else {
+                e.target.style.fill = 'white';
+                refs.current[like_result.like_ref_id].innerHTML--;
+
+              }
+
+          }catch(err: any) {
+            console.log(`ERROR :::targetLikeTop ${err.message}`);
+            sweetErrorHandling(err).then();
+
+                  }}
     return (
         <div style={{ width:"1920px", height: "1055px",  backgroundColor: "#F4FDE7", marginRight: "50px" }}>
             <Container>
@@ -61,49 +106,13 @@ export function TodaysMenus() {
                   <Stack sx={{  width:"1170px", height: "350px",marginTop: "40px",display: "flex", flexDirection: "row",justifyContent: "space-between" }}>
                  
 
-                  {/* {todaysMenus.map((ele: Restaurant) => {
-                  const image_path = `${serviceApi}/${ele.mb_image}`;
-                  return (
-                  <CssVarsProvider key={ele._id}>
-                  
-                  <Card sx={{ minHeight: 350,   
-                                width: 276,     
-                                marginRight: "30px",  cursor: "pointer" 
-                                     }}>
-                                        <img style={{width: "270px", height:"220px"}} src={image_path}
-                                     loading="lazy"
-                                       alt="rasim"
-                                             />
-                                            <CardContent>
-                                         <Typography
-                                        gutterBottom
-                                      variant="h3"
-                                   component="div"
-                                 sx={{ textAlign: "center" }}
-                               >
-                              {ele.mb_nick}
-                          </Typography>
-                       <Typography
-                        variant="body2"
-                       color="text.secondary"
-                       sx={{ textAlign: "center" }}
-                       >
-                      Lorem ipsum dolor sit amet, dipiscing elit, sed
-                      </Typography>
-                      </CardContent>
-           
-                      </Card>
-                      </CssVarsProvider>)     
-
-})} */}
-
 {todaysMenus.map((ele: Restaurant) => {
                   const image_path = `${serverApi}/${ele.mb_image}`;
                   return (
-                  <CssVarsProvider>
+                  <CssVarsProvider key={ele._id}>
 
 
-<Card
+<Card  onClick = {() => chosenRestaurantHandler(ele._id)}
                  sx={{ minHeight: "430px",   
                  width: 325, 
                  marginRight: "35px", cursor: "pointer" 
@@ -160,6 +169,7 @@ export function TodaysMenus() {
                             >
                             {/* <Favorite style={{ fill: "white"}}/> */}
                             <Favorite 
+                              onClick={(e) => targetLikeTop(e, ele._id)}
                             style={{
                               fill: 
                               ele?.mb_liked && ele?.mb_liked[0]?.my_favorite
@@ -195,7 +205,11 @@ export function TodaysMenus() {
                           }}
                          >
 
-                        <div>{ele.mb_likes}</div>
+                        <div
+                         ref={(element) => (refs.current[ele._id] = element)}
+                         > 
+                         {ele.mb_likes} 
+                         </div>
                        <Favorite sx={{ fontSize: 20, marginLeft: "5px"}}/>
                        </Typography>
                      </Stack>
