@@ -220,8 +220,8 @@
 // }          
 
 
-import React, { useEffect } from "react";
-import { Box,  Stack } from "@mui/material";
+import React, { useEffect, useRef } from "react";
+import { Box,  Button,  Stack } from "@mui/material";
 
 import { Favorite, Visibility } from "@mui/icons-material";
 import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
@@ -237,6 +237,11 @@ import { retrieveMenuPanel } from "./selector";
 import { setMenuPanel } from "./slice";
 import { Dispatch } from "@reduxjs/toolkit";
 import RestaurantApiService from "../../apiservices/restaurantApiServices";
+import { Definer } from "../../../lib/Definer";
+import assert from "assert";
+import MemberApiService from "../../apiservices/memberApiServices";
+import { sweetErrorHandling, sweetTopSmallSuccessAlert } from "../../../lib/sweetAlert";
+import { useHistory } from "react-router-dom";
 
 
 // REDUX SLICE
@@ -253,6 +258,9 @@ const menuPanelRetriever = createSelector(
 );
 
 export function MenuPanel() {
+    //INITIALIZITION
+  const history = useHistory();
+  const refs: any = useRef([]);
   const { menuPanel } = useSelector(menuPanelRetriever);
   console.log("menuPanel::",menuPanel);
   const { setMenuPanel } = actionDispatch(useDispatch());
@@ -267,6 +275,41 @@ export function MenuPanel() {
     
    
 }, []);
+
+const chosenRestaurantHandler = (id: string) => {
+  history.push(`/restaurant/${id}`);
+ }
+
+ const goRestaurantsHandler = () => history.push('/restaurant');
+
+
+/** HANDLERS */  
+
+const targetLikeBest =  async (e: any, id: string) => {
+  try {
+     assert.ok(localStorage.getItem("member_data"), Definer.auth_err1);
+     const memberService = new MemberApiService();
+      const like_result: any = await memberService.memberLikeTarget({
+        like_ref_id: id, 
+        group_type: 'member'
+      });
+      assert.ok(like_result, Definer.general_err1);
+      if(like_result.like_status >0) {
+        e.target.style.fill = 'red';
+        refs.current[like_result.like_ref_id].innerHTML++;
+
+
+      }else {
+        e.target.style.fill = 'white';
+        refs.current[like_result.like_ref_id].innerHTML--;
+      }
+      await sweetTopSmallSuccessAlert("success", 700,false);
+
+  }catch(err: any) {
+    console.log(`ERROR :::targetLikeBest ${err.message}`);
+    sweetErrorHandling(err).then();
+
+          }}
   return (
     <div style={{ width: "1920px", height: "850px", marginLeft: "30px", marginTop: "38px", backgroundColor: "#000000ff" }}>
 
@@ -282,15 +325,18 @@ export function MenuPanel() {
           </Typography>
         </Box>
 
-        <Box sx={{ width: "1392px", height: "350px", marginTop: "45px", marginLeft: "-60px" }}>
-          <Stack flexDirection={"row"} justifyContent={"space-around"} sx={{ width: "1170px", height: "665px", marginLeft: "105px", border: "1px solid red" }}>
+        <Box sx={{ width: "1392px", height: "350px", marginTop: "45px", marginLeft: "-60px",border:"1px solid green" }}>
+          <Stack flexDirection={"row"} justifyContent={"space-around"} sx={{ width: "1170px", height: "565px", marginLeft: "90px", border: "1px solid red" }}>
             {menuPanel.map((ele: Restaurant) => {
               const image_path = `${serverApi}/${ele.mb_image}`;
               return (
                 <CssVarsProvider   key={ele._id}>
-                  <Card
+                  <Card  onClick = {() => chosenRestaurantHandler(ele._id)}
                     variant="outlined"
-                    sx={{ minHeight: 350, minWidth: 325, mr: "35px" }}
+                    sx={{ minHeight: "420px",   
+                   width: "350px",     
+                    marginRight: "25px", cursor: "pointer" 
+                     }}
                   >
                     <CardOverflow>
                       <AspectRatio ratio="1">
@@ -312,8 +358,9 @@ export function MenuPanel() {
                           transform: "translateY(50%)",
                           color: "rgba(0,0,0,.4)"
                         }}
+                        onClick={(e) => (e.stopPropagation())}
                       >
-                        <Favorite
+                        <Favorite onClick={(e) => targetLikeBest(e, ele._id)}
                           style={{
                             fill: 
                             ele?.mb_liked && ele?.mb_liked[0]?.my_favorite
@@ -387,7 +434,7 @@ export function MenuPanel() {
                             display: "flex"
                           }}
                         >
-                          <div>{ele.mb_likes}</div>
+                          <div  ref={(element) => (refs.current[ele._id] = element)}>{ele.mb_likes}</div>
                           <Favorite sx={{ fontSize: 20, marginLeft: "5px" }} />
                         </Typography>
                       </Stack>
@@ -397,6 +444,17 @@ export function MenuPanel() {
               );
             }
             )}
+
+          </Stack>
+          <Stack flexDirection={"row"}
+          justifyContent={"flex-end"}
+          style={{width: "100%", marginTop: "36px"}}
+          >
+            <Button  style={{background: "#1926d2", color: "#FFFFFF"}}
+            onClick={goRestaurantsHandler}
+            >
+              Go to Restaurants
+            </Button>
 
           </Stack>
         </Box>

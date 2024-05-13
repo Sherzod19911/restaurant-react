@@ -24,13 +24,13 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import IconButton from "@mui/joy/IconButton";
 import { Favorite } from "@mui/icons-material";
 import VisibilityIcon from '@mui/icons-material/LocationOnRounded';
-import { sweetErrorHandling } from "../../../lib/sweetAlert";
+import { sweetErrorHandling, sweetTopSmallSuccessAlert } from "../../../lib/sweetAlert";
 
 import { Definer } from "../../../lib/Definer";
 import assert from "assert";
 
 import { useRef } from "react";
-import { MemberLiken } from "../../../types/others";
+
 import { useHistory } from "react-router-dom";
 
 //REDUX
@@ -86,8 +86,8 @@ export function TodaysMenus() {
               }else {
                 e.target.style.fill = 'white';
                 refs.current[like_result.like_ref_id].innerHTML--;
-
               }
+              await sweetTopSmallSuccessAlert("success", 700,false);
 
           }catch(err: any) {
             console.log(`ERROR :::targetLikeTop ${err.message}`);
@@ -115,7 +115,8 @@ export function TodaysMenus() {
 <Card  onClick = {() => chosenRestaurantHandler(ele._id)}
                  sx={{ minHeight: "430px",   
                  width: 325, 
-                 marginRight: "35px", cursor: "pointer" 
+                 marginRight: "35px",
+                  cursor: "pointer" 
                  }}
                  >    
                    <CardCover>
@@ -163,9 +164,8 @@ export function TodaysMenus() {
                                  bottom: 45,
                                  transform: "translateY(50%)",
                                  color: "rgba(0,0,0,.4)"
-
-
-                              }}
+                                }}
+                                onClick={(e) => (e.stopPropagation())}
                             >
                             {/* <Favorite style={{ fill: "white"}}/> */}
                             <Favorite 
