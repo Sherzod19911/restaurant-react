@@ -1,9 +1,9 @@
 import { BoArticle } from "./boArticle";
-import { createSlice } from "@reduxjs/toolkit";
 import { Product } from "./product";
 import { Restaurant } from "./user";
 export interface AppRootState {
     homePage: HomePageState;
+    restaurantPage: RestaurantPageState;
 
 }
 
@@ -18,4 +18,13 @@ export interface HomePageState {
     bestBoarticles: BoArticle[];
     trendBoarticles: BoArticle[];
     newsBoarticles: BoArticle[];
+}
+
+ /**RESTAURANT PAGE  */
+ export interface RestaurantPageState {
+    targetRestaurants: Restaurant[];
+    randomRestaurants: Restaurant[];
+    chosenRestaurant: Restaurant | null;
+    targetProducts: Product[];
+    chosenProduct: Product | null;
 }

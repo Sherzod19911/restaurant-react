@@ -22,7 +22,7 @@ import { MeLiked } from "./product";
   mb_follow_cnt: number;
   mb_subscriber_cnt:  number;
   createdAt: Date,
-  mb_liked: MeLiked[];
+  me_liked: MeLiked[];
  }
 
  export interface Member {
@@ -44,7 +44,7 @@ import { MeLiked } from "./product";
   mb_follow_cnt: number;
   mb_subscriber_cnt:  number;
   createdAt: Date,
-  mb_liked: MeLiked[];
+  me_liked: MeLiked[];
   me_followed: MeFollowed[];
  }
 

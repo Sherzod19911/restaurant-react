@@ -208,7 +208,7 @@ import { Logout } from '@mui/icons-material';
                         </Box>
 
                         <Box sx={{mt:'40px'}}   style={{marginLeft:"25px" }}>
-                            <Button variant='contained' style={{width:"150px", height: "57px", background: '#ffffff',color:"#7DA640"}}>
+                            <Button variant='contained' style={{width:"150px", height: "57px", background: '#ffffff',color:"#7DA640", }}>
                             View More 
                             </Button>
                         </Box>

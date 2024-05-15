@@ -56,7 +56,7 @@ function App() {
     if(member_data) {
       member_data.mb_image = member_data.mb_image 
       ? `${serverApi}/${member_data.mb_image}` 
-      : "/auth/user.svg";
+      : "/auth.jpg";
       setVerifiedMemberData(member_data)
     }
 
